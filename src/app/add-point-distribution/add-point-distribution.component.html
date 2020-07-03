@@ -1,0 +1,37 @@
+<div>
+  <div class="ui-fluid p-formgrid p-grid">
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <label for="pointDistributionName">Nom du Point de Distribution</label>
+        <input id="pointDistributionName" type="text" pInputText>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <label for="capacity">Capacité</label>
+        <input id="capacity" type="text" pInputText>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <label for="city">City</label>
+        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"
+          [showClear]="true"></p-dropdown>
+      </div>
+    </div>
+
+    <br>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-6">
+        <label for="address">Addresse</label>
+        <input id="address" type="text" pInputText>
+      </div>
+      <div class="ui-g-12 ui-md-6">
+      <label for="ouverture">Ouverture</label>
+      <p-dropdown [options]="ouvertureOption" [(ngModel)]="ouverture" placeholder="ouverture option" optionLabel="name"
+        [showClear]="true"></p-dropdown>
+        </div>
+    </div>
+  </div>
+  <br>
+  <div style="text-align:center;">
+    <button pButton type="button" label="Submit" class="ui-button-rounded"></button>
+
+  </div>
+</div>
