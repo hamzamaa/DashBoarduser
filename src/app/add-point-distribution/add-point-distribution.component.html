@@ -7,7 +7,7 @@
       </div>
       <div class="ui-g-12 ui-md-4">
         <label for="capacity">Capacité</label>
-        <input id="capacity" type="text" pInputText  [(ngModel)]="point.capacitet" name="c" #p="ngModel" required>
+        <input id="capacity" type="text" pInputText  [(ngModel)]="point.capacitet" name="c" #c="ngModel" required>
         <div class="alert alert-danger" *ngIf="c.value>100 || c.value<0">
           le maximium des places est 100
         </div>
