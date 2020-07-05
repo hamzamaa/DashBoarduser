@@ -3,15 +3,18 @@
     <div class="ui-g ui-fluid">
       <div class="ui-g-12 ui-md-4">
         <label for="pointDistributionName">Nom du Point de Distribution</label>
-        <input id="pointDistributionName" type="text" pInputText>
+        <input id="pointDistributionName" type="text" pInputText [(ngModel)]="point.nom" name="n" #n="ngModel" required>>
       </div>
       <div class="ui-g-12 ui-md-4">
         <label for="capacity">Capacité</label>
-        <input id="capacity" type="text" pInputText>
+        <input id="capacity" type="text" pInputText  [(ngModel)]="point.capacitet" name="c" #p="ngModel" required>
+        <div class="alert alert-danger" *ngIf="c.value>100 || c.value<0">
+          le maximium des places est 100
+        </div>
       </div>
       <div class="ui-g-12 ui-md-4">
-        <label for="city">City</label>
-        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"
+        <label>Gouvernorat</label>
+        <p-dropdown [options]="Gouvernorat" [(ngModel)]="point.gouvernorat" placeholder="choisir le gouvernorat" optionLabel="name"
           [showClear]="true"></p-dropdown>
       </div>
     </div>
@@ -23,8 +26,8 @@
         <input id="address" type="text" pInputText>
       </div>
       <div class="ui-g-12 ui-md-6">
-      <label for="ouverture">Ouverture</label>
-      <p-dropdown [options]="ouvertureOption" [(ngModel)]="ouverture" placeholder="ouverture option" optionLabel="name"
+      <label>Ouverture</label>
+      <p-dropdown [options]="ouvertureOption" [(ngModel)]="point.ouverture" placeholder="ouverture option" optionLabel="name"
         [showClear]="true"></p-dropdown>
         </div>
     </div>
