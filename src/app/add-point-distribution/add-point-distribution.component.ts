@@ -9,7 +9,9 @@ import {PointDistribution} from '../model/pointDistribution';
 export class AddPointDistributionComponent implements OnInit {
 
   point: PointDistribution = new PointDistribution();
-  cities: any[];
+    listPoint: PointDistribution[] = [];
+
+    cities: any[];
   ouvertureOption: any[];
   constructor() {
     this.cities = [
@@ -28,5 +30,8 @@ export class AddPointDistributionComponent implements OnInit {
 
   ngOnInit() {
   }
-
+    addProduct() {
+        this.listPoint.push(this.point);
+        console.log(this.listPoint);
+    }
 }

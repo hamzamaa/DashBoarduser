@@ -1,10 +1,13 @@
-<div>
+  <form #f="ngForm">
+    <div class="form-group">
   <div class="ui-fluid p-formgrid p-grid">
     <div class="ui-g ui-fluid">
       <div class="ui-g-12 ui-md-4">
         <label for="pointDistributionName">Nom du Point de Distribution</label>
-        <input id="pointDistributionName" type="text" pInputText [(ngModel)]="point.nom" name="n" #n="ngModel" required>>
+        <input id="pointDistributionName" type="text" pInputText [(ngModel)]="point.nom" name="n" #n="ngModel" required>
+
       </div>
+
       <div class="ui-g-12 ui-md-4">
         <label for="capacity">Capacité</label>
         <input id="capacity" type="text" pInputText  [(ngModel)]="point.capacitet" name="c" #c="ngModel" required>
@@ -14,16 +17,23 @@
       </div>
       <div class="ui-g-12 ui-md-4">
         <label>Gouvernorat</label>
-        <p-dropdown [options]="Gouvernorat" [(ngModel)]="point.gouvernorat" placeholder="choisir le gouvernorat" optionLabel="name"
+        <p-dropdown [options]="cities" [(ngModel)]="point.gouvernorat"
+                    placeholder="choisir le gouvernorat" optionLabel="name" name="g"
           [showClear]="true"></p-dropdown>
+
       </div>
+
     </div>
+
 
     <br>
     <div class="ui-g ui-fluid">
       <div class="ui-g-12 ui-md-6">
-        <label for="address">Addresse</label>
-        <input id="address" type="text" pInputText>
+        <label>Addresse</label>
+        <input id="addresse" type="text" pInputText  [(ngModel)]="point.adresse" name="a" #a="ngModel" required>
+        <div class="alert alert-danger" *ngIf="a.invalid">
+          le champ Adresse est obligatoitre !.
+        </div>
       </div>
       <div class="ui-g-12 ui-md-6">
       <label>Ouverture</label>
@@ -34,7 +44,11 @@
   </div>
   <br>
   <div style="text-align:center;">
-    <button pButton type="button" label="Submit" class="ui-button-rounded"></button>
+
+
+
+    <button pButton type="button" label="Submit" class="ui-button-rounded" (click)="ajouterPoint()"></button>
 
   </div>
 </div>
+  </form>
