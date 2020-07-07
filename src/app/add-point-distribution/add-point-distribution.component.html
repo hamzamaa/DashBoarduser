@@ -3,23 +3,32 @@
   <div class="ui-fluid p-formgrid p-grid">
     <div class="ui-g ui-fluid">
       <div class="ui-g-12 ui-md-4">
-        <label for="pointDistributionName">Nom du Point de Distribution</label>
+        <label>Nom du Point de Distribution</label>
         <input id="pointDistributionName" type="text" pInputText [(ngModel)]="point.nom" name="n" #n="ngModel" required>
+          <div class="alert alert-danger" *ngIf="n.invalid">
+              le champ Nom est obligatoitre !.
+          </div>
 
       </div>
 
       <div class="ui-g-12 ui-md-4">
         <label for="capacity">Capacité</label>
-        <input id="capacity" type="text" pInputText  [(ngModel)]="point.capacitet" name="c" #c="ngModel" required>
+        <input id="capacity" type="text" pInputText  [(ngModel)]="point.capacite" name="c" #c="ngModel" required>
         <div class="alert alert-danger" *ngIf="c.value>100 || c.value<0">
           le maximium des places est 100
         </div>
+          <div class="alert alert-danger" *ngIf="c.invalid">
+              le champ Capacite est obligatoitre !.
+          </div>
       </div>
       <div class="ui-g-12 ui-md-4">
         <label>Gouvernorat</label>
-        <p-dropdown [options]="cities" [(ngModel)]="point.gouvernorat"
-                    placeholder="choisir le gouvernorat" optionLabel="name" name="g"
+        <p-dropdown [options]="cities" [(ngModel)]="gouvernorat"
+                    placeholder="choisir le gouvernorat" optionLabel="name" name="g" #g="ngModel" required
           [showClear]="true"></p-dropdown>
+          <div class="alert alert-danger" *ngIf="g.invalid">
+              le champ Gouvernorat est obligatoitre !.
+          </div>
 
       </div>
 
@@ -37,8 +46,13 @@
       </div>
       <div class="ui-g-12 ui-md-6">
       <label>Ouverture</label>
-      <p-dropdown [options]="ouvertureOption" [(ngModel)]="point.ouverture" placeholder="ouverture option" optionLabel="name"
+      <p-dropdown [options]="ouvertureOption" [(ngModel)]="pointOuverture" placeholder="ouverture option" name="o"
+                  #o="ngModel" required
+                  optionLabel="name"
         [showClear]="true"></p-dropdown>
+          <div class="alert alert-danger" *ngIf="o.invalid">
+              le champ Ouverture est obligatoitre !.
+          </div>
         </div>
     </div>
   </div>
@@ -52,3 +66,4 @@
   </div>
 </div>
   </form>
+  <p-toast [style]="{marginTop: '80px'}"></p-toast>

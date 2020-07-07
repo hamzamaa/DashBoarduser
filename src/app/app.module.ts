@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 
 
 
@@ -41,7 +42,8 @@ const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
     BrowserAnimationsModule,
     InputTextModule,
     DropdownModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
