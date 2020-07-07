@@ -1,0 +1,6 @@
+{
+    "/": {
+      "target": "http://localhost/bikeclub/web/app_dev.php",
+      "secure": false
+    }
+  }
