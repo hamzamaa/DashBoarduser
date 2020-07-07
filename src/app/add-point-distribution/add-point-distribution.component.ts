@@ -15,11 +15,32 @@ import * as html2canvas from 'html2canvas';
 export class AddPointDistributionComponent implements OnInit {
   constructor(private httpClient: HttpClient, private messageService: MessageService) {
     this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' }
+      { name: 'Ariana', code: 'Ariana' },
+      { name: 'Béja', code: 'Béja' },
+      { name: 'Ben Arous', code: 'Ben Arous' },
+      { name: 'Bizerte', code: 'Bizerte' },
+      { name: 'Gabès', code: 'Gabès' },
+        { name: 'Bizerte', code: 'Bizerte' },
+        { name: 'Gafsa', code: 'Gafsa' },
+        { name: 'Jendouba', code: 'Jendouba' },
+        { name: 'Kairouan', code: 'Kairouan' },
+        { name: 'Kasserine', code: 'Kasserine' },
+        { name: 'Kébili', code: 'Kébili' },
+        { name: 'Le Kef', code: 'Le Kef' },
+        { name: 'Mahdia', code: 'Mahdia' },
+        { name: 'La Manouba', code: 'La Manouba' },
+        { name: 'Médenine', code: 'Médenine' },
+        { name: 'Monastir', code: 'Monastir' },
+        { name: 'Nabeul', code: 'Nabeul' },
+        { name: 'Sfax', code: 'Sfax' },
+        { name: 'Sidi Bouzid', code: 'Sidi Bouzid' },
+        { name: 'Siliana', code: 'Siliana' },
+        { name: 'Sousse', code: 'Sousse' },
+        { name: 'Tataouine', code: 'Tataouine' },
+        { name: 'Tozeur', code: 'Tozeur' },
+        { name: 'Tunis', code: 'Tunis' },
+        { name: 'Zaghouan', code: 'Zaghouan' },
+
     ];
     this.ouvertureOption = [
       { name: '24/24-7/7', code: '24/24-7/7' },
