@@ -1,6 +1,6 @@
-export class ouverture {
-      code?  : string;
-      name?  : string;
+export class Ouverture {
+      code?: string;
+      name?: string;
 
-  
+
   }

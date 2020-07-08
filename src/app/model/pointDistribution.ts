@@ -4,7 +4,7 @@ export class PointDistribution {
   ouverture?: string;
   capacite?: number;
   gouvernorat?: number;
-    nom?  : string;
+    nom?: string;
 
 
 }

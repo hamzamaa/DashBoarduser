@@ -17,6 +17,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
+import { AddVeloLouerComponent } from './add-velo-louer/add-velo-louer.component';
+
 
 
 
@@ -31,7 +33,8 @@ const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
     LoginComponent,
     AddPointDistributionComponent,
     Component404Component,
-    HomeComponent
+    HomeComponent,
+    AddVeloLouerComponent
   ],
   imports: [
     BrowserModule,
