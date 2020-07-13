@@ -1,0 +1,77 @@
+<p-table [value]="Velos" dataKey="vin" editMode="row">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>PointDistribution</th>
+      <th>matricule</th>
+      <th>modele</th>
+      <th>nombreVitesse</th>
+      <th>type</th>
+      <th>taille</th>
+      <th>tarifParHeure</th>
+      <th>disponible</th>
+      <th>Destination</th>
+      <th>Marque</th>
+
+      <th style="width:8em"></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+    <tr [pEditableRow]="rowData">
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="rowData.Nom" required>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.Nom}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="rowData.Addresse" required>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.Addresse}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <p-dropdown [options]="ouvertureOption" [(ngModel)]="rowData.Ouverture" [style]="{'width':'100%'}"></p-dropdown>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.Ouverture}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="rowData.Capacite">
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.Capacite}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="rowData.Gouvernorat">
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.Gouvernorat}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td style="text-align:center">
+        <button *ngIf="!editing" pButton type="button" pInitEditableRow icon="pi pi-pencil" class="ui-button-info" (click)="onRowEditInit(rowData)"></button>
+        <button *ngIf="editing" pButton type="button" pSaveEditableRow icon="pi pi-check" class="ui-button-success" style="margin-right: .5em" (click)="onRowEditSave(rowData)"></button>
+        <button *ngIf="editing" pButton type="button" pCancelEditableRow icon="pi pi-times" class="ui-button-danger" (click)="onRowEditCancel(rowData, ri)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

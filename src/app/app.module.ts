@@ -23,6 +23,8 @@ import {MessageModule} from 'primeng/message';
 import { AffichageListPointComponent } from './affichage-list-point/affichage-list-point.component';
 import {TableModule} from 'primeng/table';
 import { ModifyPointComponent } from './modify-point/modify-point.component';
+import { AffichageListVeloComponent } from './affichage-list-velo/affichage-list-velo.component';
+import { ModifyVeloComponent } from './modify-velo/modify-velo.component';
 
 
 
@@ -41,6 +43,8 @@ const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
     AddVeloLouerComponent,
     AffichageListPointComponent,
     ModifyPointComponent,
+    AffichageListVeloComponent,
+    ModifyVeloComponent,
 
   ],
   imports: [

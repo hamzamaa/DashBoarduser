@@ -17,14 +17,14 @@ export class AffichageListPointComponent implements OnInit {
   BASE_URL = 'http://localhost:4200/';
   msgs: Message[] = [];
 
-  constructor(private apiservice: ApiService,private httpClient: HttpClient,private messageService: MessageService) { 
+  constructor(private apiservice: ApiService, private httpClient: HttpClient, private messageService: MessageService) {
 
   }
 
   ngOnInit() {
     this.httpClient.get<PointDistribution[]>(this.BASE_URL + 'getAllLPoint').subscribe(
       points => {
-        this.points =points
+        this.points = points;
 
       });
 
@@ -39,25 +39,25 @@ export class AffichageListPointComponent implements OnInit {
 
   ];
   }
- modifyPoint(){
-   console.log("modified successfully")
+ modifyPoint() {
+   console.log('modified successfully');
  }
 
- removePoint(id){
-   console.log(event)
-  this.apiservice.deletePoint(id).subscribe(item => {
-    console.log("removed successfully")
+ removePoint(id) {
+   console.log(event);
+   this.apiservice.deletePoint(id).subscribe(item => {
+    console.log('removed successfully');
     complete : {
-        this.msgs.push({severity:'error', summary:'', detail:'Point removed successfully'});
+        this.msgs.push({severity: 'error', summary: '', detail: 'Point removed successfully'});
 
-    
-      this.httpClient.get<PointDistribution[]>(this.BASE_URL + 'getAllLPoint').subscribe(
+
+        this.httpClient.get<PointDistribution[]>(this.BASE_URL + 'getAllLPoint').subscribe(
         points => {
-          this.points =points
-  
+          this.points = points;
+
         });
     }
-  })
+  });
 }
- 
+
 }
