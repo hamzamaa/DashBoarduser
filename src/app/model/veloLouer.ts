@@ -3,14 +3,11 @@ export class VeloLouer {
     PointDistribution?: string;
     matricule?: number;
     modele?: number;
-    nombreVitesse?: string;
+    nombreVitesse?: number;
     type?: string;
-    taille?: number;
-    tarifParHeure?: string;
-    disponible?: string;
-    ouverture?: string;
+    taille?: string;
+    tarifParHeure?: number;
+    disponible?: boolean;
     Destination?: number;
     Marque?: number;
-    nombreVitesse?: string;
-
   }

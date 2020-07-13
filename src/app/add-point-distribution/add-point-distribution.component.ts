@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PointDistribution } from '../model/pointDistribution';
 import { HttpClient } from '@angular/common/http';
+import { Message } from 'primeng/api';
 import { MessageService } from 'primeng-lts/components/common/messageservice';
-import * as jsPDF from 'jspdf' ;
+import * as jsPDF from 'jspdf';
 import * as html2canvas from 'html2canvas';
 
 @Component({
@@ -13,6 +14,8 @@ import * as html2canvas from 'html2canvas';
 
 })
 export class AddPointDistributionComponent implements OnInit {
+  msgs: Message[] = [];
+
   constructor(private httpClient: HttpClient, private messageService: MessageService) {
     this.cities = [
       { name: 'Ariana', code: 'Ariana' },
@@ -20,26 +23,26 @@ export class AddPointDistributionComponent implements OnInit {
       { name: 'Ben Arous', code: 'Ben Arous' },
       { name: 'Bizerte', code: 'Bizerte' },
       { name: 'Gabès', code: 'Gabès' },
-        { name: 'Bizerte', code: 'Bizerte' },
-        { name: 'Gafsa', code: 'Gafsa' },
-        { name: 'Jendouba', code: 'Jendouba' },
-        { name: 'Kairouan', code: 'Kairouan' },
-        { name: 'Kasserine', code: 'Kasserine' },
-        { name: 'Kébili', code: 'Kébili' },
-        { name: 'Le Kef', code: 'Le Kef' },
-        { name: 'Mahdia', code: 'Mahdia' },
-        { name: 'La Manouba', code: 'La Manouba' },
-        { name: 'Médenine', code: 'Médenine' },
-        { name: 'Monastir', code: 'Monastir' },
-        { name: 'Nabeul', code: 'Nabeul' },
-        { name: 'Sfax', code: 'Sfax' },
-        { name: 'Sidi Bouzid', code: 'Sidi Bouzid' },
-        { name: 'Siliana', code: 'Siliana' },
-        { name: 'Sousse', code: 'Sousse' },
-        { name: 'Tataouine', code: 'Tataouine' },
-        { name: 'Tozeur', code: 'Tozeur' },
-        { name: 'Tunis', code: 'Tunis' },
-        { name: 'Zaghouan', code: 'Zaghouan' },
+      { name: 'Bizerte', code: 'Bizerte' },
+      { name: 'Gafsa', code: 'Gafsa' },
+      { name: 'Jendouba', code: 'Jendouba' },
+      { name: 'Kairouan', code: 'Kairouan' },
+      { name: 'Kasserine', code: 'Kasserine' },
+      { name: 'Kébili', code: 'Kébili' },
+      { name: 'Le Kef', code: 'Le Kef' },
+      { name: 'Mahdia', code: 'Mahdia' },
+      { name: 'La Manouba', code: 'La Manouba' },
+      { name: 'Médenine', code: 'Médenine' },
+      { name: 'Monastir', code: 'Monastir' },
+      { name: 'Nabeul', code: 'Nabeul' },
+      { name: 'Sfax', code: 'Sfax' },
+      { name: 'Sidi Bouzid', code: 'Sidi Bouzid' },
+      { name: 'Siliana', code: 'Siliana' },
+      { name: 'Sousse', code: 'Sousse' },
+      { name: 'Tataouine', code: 'Tataouine' },
+      { name: 'Tozeur', code: 'Tozeur' },
+      { name: 'Tunis', code: 'Tunis' },
+      { name: 'Zaghouan', code: 'Zaghouan' },
 
     ];
     this.ouvertureOption = [
@@ -48,7 +51,7 @@ export class AddPointDistributionComponent implements OnInit {
 
     ];
   }
-  title = 'ng-jspdf' ;
+  title = 'ng-jspdf';
   point: PointDistribution = new PointDistribution();
   listPoint: PointDistribution[] = [];
 
@@ -67,16 +70,16 @@ export class AddPointDistributionComponent implements OnInit {
 
 
   downloadPDF() {
- console.log('downloadinf pdf..');
- const doc = new jsPDF();
- doc.text('Facture de Location', 80, 10);
- doc.text('Nom', 15, 50);
+    console.log('downloadinf pdf..');
+    const doc = new jsPDF();
+    doc.text('Facture de Location', 80, 10);
+    doc.text('Nom', 15, 50);
 
- doc.text('Prenom', 15, 60);
+    doc.text('Prenom', 15, 60);
 
- doc.text('Date', 15, 70);
+    doc.text('Date', 15, 70);
 
- doc.save('facture.pdf');
+    doc.save('facture.pdf');
 
   }
 
@@ -92,8 +95,9 @@ export class AddPointDistributionComponent implements OnInit {
     this.httpClient.post<PointDistribution>(this.BASE_URL + 'addPointDistribution', this.point).subscribe(
       point => {
         console.log(point);
-        this.messageService.add({ severity: 'success', summary: 'Success Message', detail: 'point distrubition submitted' });
-      }
-    );
+
+      });
+    this.msgs = [];
+    this.msgs.push({ severity: 'success', summary: '', detail: 'point de distrubution ajouté avec succés' });
   }
 }

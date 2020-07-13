@@ -18,7 +18,11 @@ import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import { AddVeloLouerComponent } from './add-velo-louer/add-velo-louer.component';
-
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import { AffichageListPointComponent } from './affichage-list-point/affichage-list-point.component';
+import {TableModule} from 'primeng/table';
+import { ModifyPointComponent } from './modify-point/modify-point.component';
 
 
 
@@ -34,7 +38,10 @@ const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
     AddPointDistributionComponent,
     Component404Component,
     HomeComponent,
-    AddVeloLouerComponent
+    AddVeloLouerComponent,
+    AffichageListPointComponent,
+    ModifyPointComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,10 @@ const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
     InputTextModule,
     DropdownModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    MessagesModule,
+    MessageModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
