@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng-lts/components/common/messageservice';
 import { VeloLouer } from '../model/veloLouer';
+import { PointDistribution } from '../model/pointDistribution';
 import { ApiService } from '../services-api/api.service';
 
 @Component({
@@ -57,6 +58,7 @@ export class AddVeloLouerComponent implements OnInit {
     title = 'ng-jspdf';
     velo: VeloLouer = new VeloLouer();
     listvelo: VeloLouer[] = [];
+    points: PointDistribution[];
 
     types: any[];
     type: any;

@@ -1,4 +1,4 @@
-<p-table [value]="PointDistributions" dataKey="vin" editMode="row">
+<p-table [value]="PointDistributions" dataKey="id" editMode="row">
   <ng-template pTemplate="header">
       <tr>
           <th>Nom</th>
@@ -14,50 +14,53 @@
         <td>
           <p-cellEditor>
               <ng-template pTemplate="input">
-                  <input pInputText type="text" [(ngModel)]="rowData.Nom" required>
+                  <input pInputText type="text" [(ngModel)]="rowData.nom" required>
               </ng-template>
               <ng-template pTemplate="output">
-                  {{rowData.Nom}}
+                  {{rowData.nom}}
               </ng-template>
           </p-cellEditor>
       </td>
           <td>
               <p-cellEditor>
                   <ng-template pTemplate="input">
-                      <input pInputText type="text" [(ngModel)]="rowData.Addresse" required>
+                      <input pInputText type="text" [(ngModel)]="rowData.adresse" required>
                   </ng-template>
                   <ng-template pTemplate="output">
-                      {{rowData.Addresse}}
+                      {{rowData.adresse}}
                   </ng-template>
               </p-cellEditor>
           </td>
           <td>
               <p-cellEditor>
                   <ng-template pTemplate="input">
-                      <p-dropdown [options]="ouvertureOption" [(ngModel)]="rowData.Ouverture" [style]="{'width':'100%'}"></p-dropdown>
+                    <p-dropdown [options]="ouvertureOption" placeholder="ouverture option" 
+                    optionLabel="name"
+          [showClear]="true" (onChange)="modifyOuverture(rowData, $event)"></p-dropdown>
                   </ng-template>
                   <ng-template pTemplate="output">
-                      {{rowData.Ouverture}}
+                      {{rowData.ouverture}}
                   </ng-template>
               </p-cellEditor>
           </td>
           <td>
               <p-cellEditor>
                   <ng-template pTemplate="input">
-                      <input pInputText type="text" [(ngModel)]="rowData.Capacite">
+                      <input pInputText type="text" [(ngModel)]="rowData.capacite">
                   </ng-template>
                   <ng-template pTemplate="output">
-                      {{rowData.Capacite}}
+                      {{rowData.capacite}}
                   </ng-template>
               </p-cellEditor>
           </td>
           <td>
             <p-cellEditor>
                 <ng-template pTemplate="input">
-                    <input pInputText type="text" [(ngModel)]="rowData.Gouvernorat">
-                </ng-template>
+                    <p-dropdown [options]="cities" placeholder="gouvernorat option" 
+                    optionLabel="name"
+          [showClear]="true" (onChange)="modifyGouvernant(rowData, $event)"></p-dropdown>                </ng-template>
                 <ng-template pTemplate="output">
-                    {{rowData.Gouvernorat}}
+                    {{rowData.gouvernorat}}
                 </ng-template>
             </p-cellEditor>
         </td>
