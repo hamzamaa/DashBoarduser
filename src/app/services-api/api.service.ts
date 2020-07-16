@@ -32,11 +32,15 @@ export class ApiService {
         (this.BASE_URL + 'getAllLVelot');
     }
     deleteVelo(id): Observable<any> {
-        return this.httpClient.get<VeloLouer> 
+        return this.httpClient.get<VeloLouer>
         (this.BASE_URL + 'deleteVeloAction/' + id);
     }
-    updatePoint(point) : Observable<any>{
-      return this.httpClient.put<PointDistribution>(this.BASE_URL + 'updategetPointDistribution/'+point.id,point)
+    updatePoint(point): Observable<any> {
+      return this.httpClient.put<PointDistribution>(this.BASE_URL + 'updategetPointDistribution/' + point.id, point);
+    }
+
+    updateVelo(velo): Observable<any> {
+        return this.httpClient.put<VeloLouer>(this.BASE_URL + 'updategetVeloAction/' + velo.id, velo);
     }
 
 

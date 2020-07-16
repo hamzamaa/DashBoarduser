@@ -34,7 +34,7 @@ export class AffichageListPointComponent implements OnInit {
       { field: 'ouverture', header: 'Ouverture' },
       { field: 'capacite', header: 'Capacite' },
       { field: 'gouvernorat', header: 'Gouvernorat' },
-      { field: 'id', header: 'Id' },
+      { field: 'nombreVeloActuel', header: 'nombreVeloActuel' },
 
 
   ];

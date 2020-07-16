@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AffichageListPointComponent } from './affichage-list-point/affichage-list-point.component';
 import { ModifyPointComponent } from './modify-point/modify-point.component';
 import {AffichageListVeloComponent} from './affichage-list-velo/affichage-list-velo.component';
+import {ModifyVeloComponent} from './modify-velo/modify-velo.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'PointDistributionList', component: AffichageListPointComponent },
     { path: 'PointVeloList', component: AffichageListVeloComponent },
   { path: 'modifyPointDistribution', component: ModifyPointComponent },
+    { path: 'modifyVeloLouer', component: ModifyVeloComponent },
+
 
     { path: 'newVeloLouer', component: AddVeloLouerComponent },
 

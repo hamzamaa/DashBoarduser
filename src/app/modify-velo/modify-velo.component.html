@@ -1,17 +1,16 @@
-<p-table [value]="Velos" dataKey="vin" editMode="row">
+<p-table [value]="VeloLouers" dataKey="id" editMode="row">
   <ng-template pTemplate="header">
     <tr>
-      <th>PointDistribution</th>
+      <th>Parking</th>
       <th>matricule</th>
       <th>modele</th>
-      <th>nombreVitesse</th>
+      <th>NbVitesse</th>
       <th>type</th>
       <th>taille</th>
-      <th>tarifParHeure</th>
+      <th>tarifPar/h</th>
       <th>disponible</th>
       <th>Destination</th>
       <th>Marque</th>
-
       <th style="width:8em"></th>
     </tr>
   </ng-template>
@@ -20,53 +19,128 @@
       <td>
         <p-cellEditor>
           <ng-template pTemplate="input">
-            <input pInputText type="text" [(ngModel)]="rowData.Nom" required>
+            <input pInputText type="text" [(ngModel)]="rowData.PointDistribution" required>
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.Nom}}
+            {{rowData.PointDistribution}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="rowData.matricule" required>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.matricule}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+
+
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <p-dropdown [options]="modeles" placeholder="modele"
+                        optionLabel="name"
+                        [showClear]="true" (onChange)="modifymodele(rowData, $event)"></p-dropdown>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.modele}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="rowData.nombreVitesse">
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.nombreVitesse}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <p-dropdown [options]="types" placeholder="type"
+                        optionLabel="name"
+                        [showClear]="true" (onChange)="modifytype(rowData, $event)"></p-dropdown>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.type}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+
+
+
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <p-dropdown [options]="tailles" placeholder="taille"
+                        optionLabel="name"
+                        [showClear]="true" (onChange)="modifytaille(rowData, $event)"></p-dropdown>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.taille}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+
+      <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="rowData.tarifParHeure">
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{rowData.tarifParHeure}}
           </ng-template>
         </p-cellEditor>
       </td>
       <td>
         <p-cellEditor>
           <ng-template pTemplate="input">
-            <input pInputText type="text" [(ngModel)]="rowData.Addresse" required>
+            <input pInputText type="text" [(ngModel)]="rowData.disponible">
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.Addresse}}
+            {{rowData.disponible}}
           </ng-template>
         </p-cellEditor>
       </td>
+
+
       <td>
         <p-cellEditor>
           <ng-template pTemplate="input">
-            <p-dropdown [options]="ouvertureOption" [(ngModel)]="rowData.Ouverture" [style]="{'width':'100%'}"></p-dropdown>
+            <input pInputText type="text" [(ngModel)]="rowData.Destination">
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.Ouverture}}
+            {{rowData.Destination}}
           </ng-template>
         </p-cellEditor>
       </td>
+
       <td>
         <p-cellEditor>
           <ng-template pTemplate="input">
-            <input pInputText type="text" [(ngModel)]="rowData.Capacite">
+            <p-dropdown [options]="Marques" placeholder="Marque"
+                        optionLabel="name"
+                        [showClear]="true" (onChange)="modifymarque(rowData, $event)"></p-dropdown>
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.Capacite}}
+            {{rowData.Marque}}
           </ng-template>
         </p-cellEditor>
       </td>
-      <td>
-        <p-cellEditor>
-          <ng-template pTemplate="input">
-            <input pInputText type="text" [(ngModel)]="rowData.Gouvernorat">
-          </ng-template>
-          <ng-template pTemplate="output">
-            {{rowData.Gouvernorat}}
-          </ng-template>
-        </p-cellEditor>
-      </td>
+
+
+
+
+
       <td style="text-align:center">
         <button *ngIf="!editing" pButton type="button" pInitEditableRow icon="pi pi-pencil" class="ui-button-info" (click)="onRowEditInit(rowData)"></button>
         <button *ngIf="editing" pButton type="button" pSaveEditableRow icon="pi pi-check" class="ui-button-success" style="margin-right: .5em" (click)="onRowEditSave(rowData)"></button>

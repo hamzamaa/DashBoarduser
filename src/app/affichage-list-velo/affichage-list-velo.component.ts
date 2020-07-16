@@ -36,7 +36,7 @@ export class AffichageListVeloComponent implements OnInit {
             { field: 'taille', header: 'Taille' },
             { field: 'tarifParHeure', header: 'TarifParH' },
             { field: 'disponible', header: 'disponible' },
-            { field: 'Marque', header: 'Marque' },
+            { field: 'marque', header: 'marque' },
 
 
         ];
