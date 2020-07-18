@@ -1,13 +1,15 @@
+import { PointDistribution } from './pointDistribution';
+
 export class VeloLouer {
     id?: number;
-    PointDistribution?: string;
+    _point_distribution?: PointDistribution;
     matricule?: number;
     modele?: number;
-    nombreVitesse?: number;
+    nombre_vitesse?: number;
     type?: string;
     taille?: string;
-    tarifParHeure?: number;
+    tarif_par_heure?: number;
     disponible?: boolean;
     Destination?: number;
-    Marque?: number;
+    _marque?: number;
   }

@@ -84,7 +84,7 @@ export class ModifyVeloComponent implements OnInit {
         ];
     }
     onRowEditInit(veloLouers: VeloLouer) {
-        this.clonedVeloLouers[this.velo.id] = { ...VeloLouer };
+        this.clonedVeloLouers[veloLouers.id] = { ...veloLouers };
     }
 
     onRowEditSave(VeloLouers: VeloLouer) {
@@ -104,7 +104,7 @@ export class ModifyVeloComponent implements OnInit {
     modifyPointDistribution(rowData, event) {
         this.VeloLouers.forEach(element => {
             if (element.id == rowData.id) {
-                element.PointDistribution = event.value.code;
+                element._point_distribution = event.value.code;
             }
         });
     }
@@ -127,7 +127,7 @@ export class ModifyVeloComponent implements OnInit {
     modifynombreVitesse(rowData, event) {
         this.VeloLouers.forEach(element => {
             if (element.id == rowData.id) {
-                element.nombreVitesse = event.value.code;
+                element.nombre_vitesse = event.value.code;
             }
         });
     }
@@ -148,7 +148,7 @@ export class ModifyVeloComponent implements OnInit {
     modifytarifParHeure(rowData, event) {
         this.VeloLouers.forEach(element => {
             if (element.id == rowData.id) {
-                element.tarifParHeure = event.value.code;
+                element.tarif_par_heure = event.value.code;
             }
         });
     }
@@ -169,7 +169,7 @@ export class ModifyVeloComponent implements OnInit {
     modifymarque(rowData, event) {
         this.VeloLouers.forEach(element => {
             if (element.id == rowData.id) {
-                element.Marque = event.value.code;
+                element._marque = event.value.code;
             }
         });
     }

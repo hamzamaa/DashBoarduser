@@ -28,15 +28,14 @@ export class AffichageListVeloComponent implements OnInit {
             });
 
         this.cols = [
-            { field: 'pointDistribution', header: 'Point' },
             { field: 'matricule', header: 'Matricule' },
             { field: 'modele', header: 'Modele' },
-            { field: 'nombreVitesse', header: 'NbVitesse' },
+            { field: 'nombre_vitesse', header: 'NbVitesse' },
             { field: 'type', header: 'Type' },
             { field: 'taille', header: 'Taille' },
-            { field: 'tarifParHeure', header: 'TarifParH' },
+            { field: 'tarif_par_heure', header: 'TarifParH' },
             { field: 'disponible', header: 'disponible' },
-            { field: 'marque', header: 'marque' },
+            { field: '_marque', header: 'marque' },
 
 
         ];
@@ -49,7 +48,7 @@ export class AffichageListVeloComponent implements OnInit {
         console.log(event);
         this.apiservice.deleteVelo(id).subscribe(item => {
             console.log('removed successfully');
-            complete : {
+            {
                 this.msgs.push({severity: 'error', summary: '', detail: 'velo removed successfully'});
 
 

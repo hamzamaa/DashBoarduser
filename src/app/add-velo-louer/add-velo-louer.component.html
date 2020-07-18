@@ -1,10 +1,14 @@
+<p-messages [(value)]="msgs"></p-messages>
+
 <form #f="ngForm">
   <div class="form-group">
     <div class="ui-fluid p-formgrid p-grid">
       <div class="ui-g ui-fluid">
         <div class="ui-g-12 ui-md-4">
           <label>Point Distribution</label>
-          <input id="pointDistributionName" type="text" pInputText [(ngModel)]="velo.PointDistribution" name="n" #n="ngModel" required>
+          <p-dropdown [options]="points" [(ngModel)]="point"
+          placeholder="choisir le Point de distribtion" optionLabel="adresse" name="g" #g="ngModel" required
+          [showClear]="true"></p-dropdown>
         </div>
 
 
@@ -40,7 +44,7 @@
         <div class="ui-g-12 ui-md-4">
 
           <label>tarifParHeure</label>
-          <input id="t" type="text" pInputText [(ngModel)]="velo.tarifParHeure" name="t" #t="ngModel" required>
+          <input id="t" type="text" pInputText [(ngModel)]="velo.tarif_par_heure" name="t" #t="ngModel" required>
         </div>
 
 
@@ -53,7 +57,7 @@
 
         <div class="ui-g-12 ui-md-4">
           <label>Nombre de Vitesse</label>
-          <input id="nn" type="number" pInputText [(ngModel)]="velo.nombreVitesse" name="nn" #nn="ngModel" required>
+          <input id="nn" type="number" pInputText [(ngModel)]="velo.nombre_vitesse" name="nn" #nn="ngModel" required>
 
         </div>
 

@@ -25,7 +25,11 @@ export class AddPointDistributionComponent implements OnInit {
       { name: 'Lac2', code: 'Lac2' },
       { name: 'Lafayette', code: 'Lafayette' },
       { name: 'Barcelona', code: 'Barcelona' },
-      { name: 'Station Passage', code: 'Station Passage' },
+        { name: 'Beb_jdid', code: 'Beb_jdid' },
+
+        { name: 'Beb_Souika', code: 'Beb_Souika' },
+
+        { name: 'Station Passage', code: 'Station Passage' },
 
     ];
     this.ouvertureOption = [
@@ -60,7 +64,7 @@ export class AddPointDistributionComponent implements OnInit {
 
     doc.text('Prenom', 15, 60);
 
-    doc.text('Date', 15, 70);
+    doc.text('Date de Location', 15, 70);
 
     doc.save('facture.pdf');
 

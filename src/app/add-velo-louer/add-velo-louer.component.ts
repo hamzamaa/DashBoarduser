@@ -4,6 +4,7 @@ import { MessageService } from 'primeng-lts/components/common/messageservice';
 import { VeloLouer } from '../model/veloLouer';
 import { PointDistribution } from '../model/pointDistribution';
 import { ApiService } from '../services-api/api.service';
+import { Message } from 'primeng-lts/api';
 
 @Component({
     selector: 'app-add-velo-louer',
@@ -58,13 +59,15 @@ export class AddVeloLouerComponent implements OnInit {
     title = 'ng-jspdf';
     velo: VeloLouer = new VeloLouer();
     listvelo: VeloLouer[] = [];
-    points: PointDistribution[];
+    points: PointDistribution[] =[];
+    msgs: Message[] = [];
 
     types: any[];
     type: any;
     taille: any;
     modele: any;
     marque: any;
+    point: any;
     PointDistribution: any[];
     matricule: any[];
     modeles: any[];
@@ -87,18 +90,25 @@ export class AddVeloLouerComponent implements OnInit {
 
 
     ngOnInit() {
+        this.apiservice.getAllPoint().subscribe(item =>{
+            this.points = item ;
+            console.log(this.points)
+        })
     }
 
     ajouterVelo() {
         this.velo.type = this.type.code;
-        this.velo.Marque = this.marque.code;
+        this.velo._marque = this.marque.code;
         this.velo.modele = this.modele.code;
         this.velo.taille = this.taille.code;
+        this.velo._point_distribution = this.point;
+        this.velo.disponible = true;
         this.apiservice.addVelo(this.velo).subscribe(
             point => {
                 console.log(point);
-                this.messageService.add({ severity: 'success', summary: 'Success Message', detail: 'velo distrubition submitted' });
-            }
-        );
+             } );
+        this.msgs = [];
+        this.msgs.push({ severity: 'success', summary: '', detail: 'Vélo ajouté avec succés' });            }
+
     }
-}
+
