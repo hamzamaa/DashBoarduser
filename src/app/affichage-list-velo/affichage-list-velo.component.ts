@@ -28,6 +28,7 @@ export class AffichageListVeloComponent implements OnInit {
             });
 
         this.cols = [
+            { field: '_point_distribution', header: 'Point Distribution' },
             { field: 'matricule', header: 'Matricule' },
             { field: 'modele', header: 'Modele' },
             { field: 'nombre_vitesse', header: 'NbVitesse' },

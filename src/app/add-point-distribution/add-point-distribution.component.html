@@ -26,10 +26,10 @@
       <div class="ui-g-12 ui-md-4">
         <label>Ville</label>
         <p-dropdown [options]="cities" [(ngModel)]="gouvernorat"
-                    placeholder="choisir le gouvernorat" optionLabel="name" name="g" #g="ngModel" required
+                    placeholder="choisir la ville" optionLabel="name" name="g" #g="ngModel" required
           [showClear]="true"></p-dropdown>
           <div class="alert alert-danger" *ngIf="g.invalid">
-              le champ Gouvernorat est obligatoitre !.
+              le champ ville est obligatoitre !.
           </div>
 
       </div>

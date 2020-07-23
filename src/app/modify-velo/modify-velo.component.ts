@@ -20,7 +20,7 @@ export class ModifyVeloComponent implements OnInit {
     clonedVeloLouers: { [s: string]: VeloLouer; } = {};
     title = 'ng-jspdf';
     velo: VeloLouer = new VeloLouer();
-
+    Marques :any[];
     types: any[];
     type: any;
     taille: any;
@@ -29,20 +29,22 @@ export class ModifyVeloComponent implements OnInit {
     PointDistribution: any[];
     matricule: any[];
     modeles: any[];
-    tarifParHeure: any[];
+    tarif_par_heure: any[];
     tailles: any[];
     disponible: any[];
     Destination: any[];
-    Marques: any[];
-    nombreVitesse: any[];
+    _marque: any[];
+    nombre_vitesse: any;
     errors = [];
-
+    pointList
     ngOnInit() {
         this.apiService.getAllVelo().subscribe(VeloLouer => {
             this.VeloLouers = VeloLouer;
             console.log(this.VeloLouers);
         });
-
+        this.apiService.getAllPoint().subscribe(pointList =>{
+            this.PointDistribution =pointList;
+        })
         this.types = [
             { name: 'Vélo Electrique', code: 'Vélo Electrique' },
             { name: 'Vélo de Route', code: 'Vélo de Route' },
@@ -104,7 +106,7 @@ export class ModifyVeloComponent implements OnInit {
     modifyPointDistribution(rowData, event) {
         this.VeloLouers.forEach(element => {
             if (element.id == rowData.id) {
-                element._point_distribution = event.value.code;
+                element._point_distribution = event.value;
             }
         });
     }
@@ -173,5 +175,4 @@ export class ModifyVeloComponent implements OnInit {
             }
         });
     }
-
 }

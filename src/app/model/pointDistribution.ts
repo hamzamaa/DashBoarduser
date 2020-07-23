@@ -4,7 +4,7 @@ export class PointDistribution {
   ouverture?: string;
   capacite?: number;
   gouvernorat?: number;
-  nombreVeloActuel?: number;
+  nombre_velo_actuel?: number;
 
     nom?: string;
 

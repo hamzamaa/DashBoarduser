@@ -9,7 +9,6 @@
       <th>taille</th>
       <th>tarifPar/h</th>
       <th>disponible</th>
-      <th>Destination</th>
       <th>Marque</th>
       <th style="width:8em"></th>
     </tr>
@@ -19,10 +18,12 @@
       <td>
         <p-cellEditor>
           <ng-template pTemplate="input">
-            <input pInputText type="text" [(ngModel)]="rowData.PointDistribution" required>
+            <p-dropdown [options]="PointDistribution" placeholder="select a parking"
+                        optionLabel="adresse"
+                        [showClear]="true" (onChange)="modifyPointDistribution(rowData, $event)"></p-dropdown>
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.PointDistribution}}
+            {{rowData._point_distribution.adresse}}
           </ng-template>
         </p-cellEditor>
       </td>
@@ -58,7 +59,7 @@
             <input pInputText type="text" [(ngModel)]="rowData.nombreVitesse">
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.nombreVitesse}}
+            {{rowData.nombre_vitesse}}
           </ng-template>
         </p-cellEditor>
       </td>
@@ -97,7 +98,7 @@
             <input pInputText type="text" [(ngModel)]="rowData.tarifParHeure">
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.tarifParHeure}}
+            {{rowData.tarif_par_heure}}
           </ng-template>
         </p-cellEditor>
       </td>
@@ -116,23 +117,12 @@
       <td>
         <p-cellEditor>
           <ng-template pTemplate="input">
-            <input pInputText type="text" [(ngModel)]="rowData.Destination">
-          </ng-template>
-          <ng-template pTemplate="output">
-            {{rowData.Destination}}
-          </ng-template>
-        </p-cellEditor>
-      </td>
-
-      <td>
-        <p-cellEditor>
-          <ng-template pTemplate="input">
             <p-dropdown [options]="Marques" placeholder="Marque"
                         optionLabel="name"
                         [showClear]="true" (onChange)="modifymarque(rowData, $event)"></p-dropdown>
           </ng-template>
           <ng-template pTemplate="output">
-            {{rowData.Marque}}
+            {{rowData._marque}}
           </ng-template>
         </p-cellEditor>
       </td>
