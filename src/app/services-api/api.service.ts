@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { VeloLouer } from '../model/veloLouer';
 import { Observable } from 'rxjs';
 import { PointDistribution } from '../model/pointDistribution';
+import {User} from '../model/user';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ApiService {
   BASE_URL = 'http://localhost:4200/';
@@ -41,6 +42,11 @@ export class ApiService {
 
     updateVelo(velo): Observable<any> {
         return this.httpClient.put<VeloLouer>(this.BASE_URL + 'updategetVeloAction/' + velo.id, velo);
+    }
+
+    login(user): Observable<any> {
+        return this.httpClient.get<User>
+        (this.BASE_URL + 'loginAction/' + user.login+'/'+user.password);
     }
 
 

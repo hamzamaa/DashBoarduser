@@ -10,10 +10,14 @@ import { AffichageListPointComponent } from './affichage-list-point/affichage-li
 import { ModifyPointComponent } from './modify-point/modify-point.component';
 import {AffichageListVeloComponent} from './affichage-list-velo/affichage-list-velo.component';
 import {ModifyVeloComponent} from './modify-velo/modify-velo.component';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
-  { path: 'newPointDistribution', component: AddPointDistributionComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'home', component: HomeComponent },
+
+    { path: 'newPointDistribution', component: AddPointDistributionComponent },
   { path: 'PointDistributionList', component: AffichageListPointComponent },
     { path: 'PointVeloList', component: AffichageListVeloComponent },
   { path: 'modifyPointDistribution', component: ModifyPointComponent },
@@ -22,7 +26,7 @@ const routes: Routes = [
 
     { path: 'newVeloLouer', component: AddVeloLouerComponent },
 
-    { path: '**', component: HomeComponent },
+    { path: '**', component: LoginComponent },
 
 ]; // sets up routes constant where you define your routes
 

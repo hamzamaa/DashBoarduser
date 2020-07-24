@@ -24,6 +24,7 @@ export class ModifyVeloComponent implements OnInit {
     types: any[];
     type: any;
     taille: any;
+    description: any;
     modele: any;
     marque: any;
     PointDistribution: any[];
@@ -140,6 +141,17 @@ export class ModifyVeloComponent implements OnInit {
             }
         });
     }
+
+    modifydescription(rowData, event) {
+        this.VeloLouers.forEach(element => {
+            if (element.id == rowData.id) {
+                element.type = event.value.code;
+            }
+        });
+    }
+
+
+
     modifytaille(rowData, event) {
         this.VeloLouers.forEach(element => {
             if (element.id == rowData.id) {

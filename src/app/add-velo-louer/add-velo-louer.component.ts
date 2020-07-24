@@ -67,6 +67,7 @@ export class AddVeloLouerComponent implements OnInit {
     taille: any;
     modele: any;
     marque: any;
+    description: any;
     point: any;
     PointDistribution: any[];
     matricule: any[];
