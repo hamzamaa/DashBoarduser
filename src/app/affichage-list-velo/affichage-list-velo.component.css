@@ -1,0 +1,16 @@
+.card-img-top {
+    width: 60%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-img-bottom {
+    width: 80%;
+    border-bottom-right-radius: calc(.25rem - 1px);
+    border-bottom-left-radius: calc(.25rem - 1px);
+}
+
+.card-img {
+    width: 60%;
+    border-radius: calc(.25rem - 1px);
+}

@@ -53,23 +53,6 @@ export class AddPointDistributionComponent implements OnInit {
 
 
 
-
-
-
-  downloadPDF() {
-    console.log('downloadinf pdf..');
-    const doc = new jsPDF();
-    doc.text('Facture de Location', 80, 10);
-    doc.text('Nom', 15, 50);
-
-    doc.text('Prenom', 15, 60);
-
-    doc.text('Date de Location', 15, 70);
-
-    doc.save('facture.pdf');
-
-  }
-
   ngOnInit() {
   }
   addProduct() {

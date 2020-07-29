@@ -25,10 +25,15 @@ import {TableModule} from 'primeng/table';
 import { ModifyPointComponent } from './modify-point/modify-point.component';
 import { AffichageListVeloComponent } from './affichage-list-velo/affichage-list-velo.component';
 import { ModifyVeloComponent } from './modify-velo/modify-velo.component';
+import {BikeCardComponent} from './bike-card/bike-card.component';
+import { LouerVeloComponent } from './louer-velo/louer-velo.component';
+import {CalendarModule} from 'primeng/calendar';
 
 
 
-const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
+
+const ROUTES: Routes = [{path: 'login', component: LoginComponent},
+];
 
 @NgModule({
   declarations: [
@@ -45,6 +50,8 @@ const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
     ModifyPointComponent,
     AffichageListVeloComponent,
     ModifyVeloComponent,
+      BikeCardComponent,
+      LouerVeloComponent,
 
   ],
   imports: [
@@ -60,7 +67,8 @@ const ROUTES: Routes = [{path: 'login', component: LoginComponent}];
     ToastModule,
     MessagesModule,
     MessageModule,
-    TableModule
+    TableModule,
+      CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

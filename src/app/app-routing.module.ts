@@ -11,6 +11,7 @@ import { ModifyPointComponent } from './modify-point/modify-point.component';
 import {AffichageListVeloComponent} from './affichage-list-velo/affichage-list-velo.component';
 import {ModifyVeloComponent} from './modify-velo/modify-velo.component';
 import {LoginComponent} from './login/login.component';
+import {LouerVeloComponent} from './louer-velo/louer-velo.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,11 @@ const routes: Routes = [
     { path: 'PointVeloList', component: AffichageListVeloComponent },
   { path: 'modifyPointDistribution', component: ModifyPointComponent },
     { path: 'modifyVeloLouer', component: ModifyVeloComponent },
+    { path: 'affichage', component: AffichageListVeloComponent },
+    { path: 'affichageVelo', component: AffichageListVeloComponent },
+    { path: 'louer/:id', component: LouerVeloComponent },
+
+
 
 
     { path: 'newVeloLouer', component: AddVeloLouerComponent },

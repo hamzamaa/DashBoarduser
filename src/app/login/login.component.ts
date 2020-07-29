@@ -3,6 +3,7 @@ import {ApiService} from '../services-api/api.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {User} from '../model/user';
+import {Sidebar} from 'primeng-lts/primeng';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +13,13 @@ import {User} from '../model/user';
 export class LoginComponent implements OnInit {
     user:User
     error:boolean=false
+    connected; boolean;
 
     constructor(private apiservice: ApiService,private router:Router) { }
 
   ngOnInit(){
         this.user=new User()
+      this.connected=  this.apiservice.getConnected();
 
   }
     signIn() {
@@ -24,14 +27,15 @@ export class LoginComponent implements OnInit {
         this.apiservice.login(this.user).subscribe(
             (data )=> {
                 this.error=false
-                localStorage.setItem('user', data);
-
-                this.router.navigate(['/newPointDistribution']);
+                this.apiservice.setConnectedTrue();
 
 
+                localStorage.setItem('user',"1");
 
+              //window.location.href='/PointVeloList';
+                this.router.navigate(['/PointVeloList']);
 
-            },(err:HttpErrorResponse)=>{
+           },(err:HttpErrorResponse)=>{
              if(err.status===401) {
 
                     this.error=true

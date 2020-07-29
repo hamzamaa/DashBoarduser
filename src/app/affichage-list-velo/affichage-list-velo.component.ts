@@ -21,7 +21,7 @@ export class AffichageListVeloComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.httpClient.get<VeloLouer[]>(this.BASE_URL + 'getAllLVelot').subscribe(
+        this.httpClient.get<VeloLouer[]>(this.BASE_URL + 'getVeloDispooAction').subscribe(
             velos => {
                 this.velos = velos;
 
@@ -29,6 +29,10 @@ export class AffichageListVeloComponent implements OnInit {
 
         this.cols = [
             { field: '_point_distribution', header: 'Point Distribution' },
+            { field: 'date_reservation', header: 'Reservation' },
+
+            { field: '_marque', header: 'marque' },
+
             { field: 'matricule', header: 'Matricule' },
             { field: 'modele', header: 'Modele' },
             { field: 'nombre_vitesse', header: 'NbVitesse' },

@@ -1,20 +1,20 @@
-<section>
+<section *ngIf="checkConnected()">
   <!-- Left Sidebar -->
   <aside id="leftsidebar" class="sidebar" >
     <!-- User Info -->
     <div class="user-info">
       <div class="image">
-        <img src="assets/images/user.png" width="48" height="48" alt="User" />
+        <img src="assets/images/velo2.jpg" width="48" height="48" alt="User" />
       </div>
       <div class="info-container">
-        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mohamed Khalil</div>
+        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">hamza maalaoui</div>
         <div class="email">Mohamed.Khalil.Gharbi@gmail.com</div>
       </div>
     </div>
     <!-- #User Info -->
     <!-- Menu -->
-    <div class="menu">
-      <ul class="list">
+    <div class="menu"  >
+      <ul class="list" >
         <li class="header">MAIN NAVIGATION</li>
         <li class="active">
           <a href="index.html">
@@ -30,34 +30,14 @@
             <span>Location</span>
           </a>
           <ul class="ml-menu">
-            <li>
-              <a href="javascript:void(0);" class="menu-toggle">
-                <span>Point de Distribution</span>
-              </a>
-              <ul class="ml-menu">
-                <li>
-                  <a href="pages/widgets/cards/basic.html" routerLink="/newPointDistribution" routerLinkActive="active">Ajouter Point de Distribution</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/no-header.html" routerLink="/modifyPointDistribution" routerLinkActive="active">Modify Point de Distribution</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/no-header.html" routerLink="/PointDistributionList" routerLinkActive="active">Consulter Point de Distribution</a>
-                </li>
-              </ul>
-            </li>
-            <li>
+
+            <li  >
               <a href="javascript:void(0);" class="menu-toggle">
                 <span>Vélo</span>
               </a>
               <ul class="ml-menu">
-                <li>
-                  <a href="pages/widgets/cards/basic.html" routerLink="/newVeloLouer" routerLinkActive="active">Ajouter Velo de Location</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/no-header.html" routerLink="/modifyVeloLouer" routerLinkActive="active">Modifier Velo</a>
-                </li>
-                <li>
+
+                <li  >
                   <a href="pages/widgets/cards/no-header.html" routerLink="/PointVeloList" routerLinkActive="active">Consulter Velo</a>
                 </li>
 
@@ -146,35 +126,14 @@
               <a href="javascript:void(0);" class="menu-toggle">
                 <span>Achat</span>
               </a>
-              <ul class="ml-menu">
-                <li>
-                  <a href="pages/widgets/cards/basic.html">Ajouter Point de Distribution</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/colored.html">Supprimer Point de Distribution</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/no-header.html">Modifier Point de Distribution</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/no-header.html">Afficher Point de Distribution</a>
-                </li>
-              </ul>
+
             </li>
             <li>
               <a href="javascript:void(0);" class="menu-toggle">
                 <span>Vélo</span>
               </a>
               <ul class="ml-menu">
-                <li>
-                  <a href="pages/widgets/cards/basic.html">Ajouter Vélo</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/colored.html">Supprimer Vélo</a>
-                </li>
-                <li>
-                  <a href="pages/widgets/cards/no-header.html">Modifier Vélo</a>
-                </li>
+
                 <li>
                   <a href="pages/widgets/cards/no-header.html">Afficher Vélo</a>
                 </li>
@@ -392,4 +351,5 @@
   </aside>
   <!-- #END# Right Sidebar -->
 </section>
+
 

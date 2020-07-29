@@ -10,6 +10,7 @@ import {User} from '../model/user';
 })
 export class ApiService {
   BASE_URL = 'http://localhost:4200/';
+  connected; boolean=true;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -24,7 +25,15 @@ export class ApiService {
       (this.BASE_URL + 'deletePointDistribution/' + id);
   }
 
-  getAllPoint(): Observable<PointDistribution[]> {
+
+    recupereUser(id){
+        return this.httpClient.get<User>
+        (this.BASE_URL + 'getOneUserAction/' + id);
+    }
+
+
+
+    getAllPoint(): Observable<PointDistribution[]> {
     return this.httpClient.get<PointDistribution[]>
       (this.BASE_URL + 'getAllLPoint');
   }
@@ -49,11 +58,25 @@ export class ApiService {
         (this.BASE_URL + 'loginAction/' + user.login+'/'+user.password);
     }
 
+    louer(id,velo): Observable<any> {
+        return this.httpClient.put<VeloLouer>(this.BASE_URL + 'louerVeloAction/' + id,JSON.stringify(velo));
+    }
 
 
+    setConnectedTrue(){
+      this.connected=true;
+}
 
+    setConnectedFalse(){
+        this.connected=false;
+    }
 
+getConnected():boolean{
+      return this.connected;
+}
 
-
-
+    getVelo(id){
+        return this.httpClient.get<VeloLouer>
+        (this.BASE_URL + 'getOneVeloAction/' + id);
+    }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {ApiService} from '../services-api/api.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,17 +9,33 @@ import {Router} from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router ,private serviceApi: ApiService) { }
+  connected: boolean ;
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.checkConnected();
+        console.log(this.connected);
+    }
+
+    checkConnected():boolean{
+        if(localStorage.length===0){
+            return false ;
+        }
+        return true ;
+    }
   logout()
   {
 
       localStorage.removeItem("user");
-      this.router.navigate(['/login'])
+      localStorage.clear();
+      this.serviceApi.setConnectedFalse();
+     // this.router.navigate(['/login'])
+      window.location.href='/login';
 
 
+  }
+  public reload(){
+      this.ngOnInit();
   }
 
 }
