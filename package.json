@@ -24,7 +24,7 @@
     "bootstrap": "^4.5.0",
     "core-js": "^2.5.4",
     "html2canvas": "latest",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.5.1",
     "ngx-bootstrap": "^5.6.1",
     "primeflex": "^2.0.0-rc.1",
     "primeicons": "^4.0.0",
